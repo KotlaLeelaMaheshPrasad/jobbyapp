@@ -1,0 +1,7 @@
+.ProfileContainer {
+    background-image: url('https: //assets.ccbp.in/frontend/react-js/profile-bg.png');
+    height: 30vw;
+    width: 30vw;
+    background-size: cover;
+    border-radius: 8px;
+}

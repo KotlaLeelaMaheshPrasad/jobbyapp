@@ -1,0 +1,38 @@
+.labelEl {
+    display: block;
+    font-size: 24px;
+    color: violet;
+    margin: 4px;
+}
+
+.heading {
+    text-align: center;
+    color: violet;
+}
+
+.inputEl {
+    display: block;
+    font-size: 24px;
+    color: green;
+    width: auto;
+    margin: 4px;
+}
+
+.button{
+    display: block;
+    width: auto;
+    font-size: 24px;
+    color: white;
+    background-color: violet;
+    margin: 4px;
+}
+
+.LoginPageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.errMsg {
+    color: red;
+}

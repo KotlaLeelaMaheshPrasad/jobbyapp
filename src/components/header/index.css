@@ -1,0 +1,31 @@
+.headerContainer {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #272727;
+    margin: 0px;
+}
+
+.link {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+}
+
+.Logoutbutton {
+    font-size: 20px;
+    color: white;
+    background-color: blueviolet;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 6px;
+    border-color: white;
+    border: none;
+}
+
+.Headerheading {
+    color: blueviolet;
+}
