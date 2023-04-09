@@ -1,0 +1,4 @@
+.skillContainer {
+    display: flex;
+    flex-direction: row;
+}

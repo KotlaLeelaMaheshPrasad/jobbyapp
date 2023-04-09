@@ -1,9 +1,12 @@
-import { Component } from "react";
+import { useParams } from "react-router-dom";
+import JobItem from "../JobItem";
+import Header from "../header";
 
-class Job extends Component {
-    render() {
-        return <h1>Job page</h1>;
-    }
+export default function Job () {
+    let id = useParams();
+    return (<>
+    <Header />
+    <JobItem id={id}/>
+    </>
+    );
 }
-
-export default Job;

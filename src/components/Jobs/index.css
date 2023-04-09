@@ -4,10 +4,10 @@
     align-items: space-around;
 }
 
+.Leftview{
+    padding: 16px;
+}
 
-
-.checkboxContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.Rightview{
+    padding: 16px;
 }

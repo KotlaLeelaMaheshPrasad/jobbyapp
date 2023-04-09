@@ -1,0 +1,20 @@
+.jobDetails {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.JobProfileHeader {
+    display: flex;
+        flex-direction: row;
+}
+
+.similarJobContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.skillsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

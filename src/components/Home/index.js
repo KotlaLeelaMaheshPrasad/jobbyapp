@@ -6,7 +6,7 @@ import Header from '../header';
 class Home extends Component{
     render() {
         return (<>
-        <Header/>
+        <Header />
         <div className="homeContainer">
             <h1 className='Homeheading'>Find the jobs that fits your Life</h1>
             <p className='HomeContent'>Millions of people are searching for jobs, salary information, company reviews.

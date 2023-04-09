@@ -2,11 +2,94 @@ import { Component } from "react";
 import './index.css'
 import Profile from "../Profile";
 import Header from "../header";
+import EachJobItem from "../EachJobItem";
+import InputSearchEl from "../InputSearchEl";
+import Cookies from "js-cookie";
+import EmploymentType from "../EmploymentType";
+import MinimumPackage from "../MinimumPackage";
+
+const url = 'https://apis.ccbp.in/jobs';
 
 class Jobs extends Component{
 
-    componentDidMount() {
+    constructor(props){
+        super(props);
+        this.state = {
+            jobs : null,
+            employment_type: "",
+            minimum_package: 0,
+            search: ""
+        }
+    }
 
+    getQueryParameters = () => {
+        let path = "";
+        if(this.state.employment_type!=="")
+        path = path + `employment_type=${this.state.employment_type}`;
+        if(this.state.minimum_package!==0){
+            if(path==="")
+            path = `${path}minimum_package=${this.state.minimum_package}`;
+            else
+            path =  `${path}&minimum_package=${this.state.minimum_package}`;
+        }
+        if(this.state.search!==""){
+            if(path==="")
+            path = `${path}search=${this.state.search}`;
+            else
+            path = `${path}&search=${this.state.search}`;
+        }
+        return path;
+    }
+
+    getUpdatedUrl = () => {
+        const query = this.getQueryParameters();
+        if(query === "")
+        return url ;
+        else
+        return url + "?" + query;
+    }
+
+    getJobs = async() => {
+        const jwtToken = Cookies.get('jwt_token');
+        const options = {
+            headers: {
+                Authorization: `Bearer ${jwtToken}`,
+            },
+            method: "GET",
+        }
+        const updatedUrl = this.getUpdatedUrl();
+        console.log(updatedUrl);
+        const response = await fetch(updatedUrl, options);
+        if(response.ok === true){
+            const data = await response.json();
+            console.log(data);
+            this.setState({jobs : data.jobs});
+        }
+    }
+
+    onEmploymentTypeChange = (EmploymentTypeVal) => {
+        console.log(EmploymentTypeVal);
+        this.setState(prevState => {
+            return ({...prevState, employment_type: EmploymentTypeVal});
+        }, this.getJobs)
+    }
+
+    onSearch = (searchVal) => {
+        console.log(searchVal);
+        this.setState(prevState => {
+            return ({...prevState, search: searchVal});
+        }, this.getJobs)
+    }
+
+    onMinimumPackageChange = (value) => {
+        console.log(value);
+        this.setState(prevState => {
+            return ({...prevState, minimum_package: value});
+        }, this.getJobs)
+    }
+
+    componentDidMount() {
+        this.getJobs();
     }
 
     render() {
@@ -14,55 +97,21 @@ class Jobs extends Component{
             <>
             <Header/>
             <div className="JobsPageContainer">
-                <div>
+                <div className="Leftview">
                     <Profile></Profile>
                     <hr></hr>
-                    <div>
-                        <p>Types of Employment</p>
-                        <div className="checkboxContainer">
-                            <div>
-                            <input type= 'checkbox' id='chekbox1' ></input>
-                        <label htmlFor="checkbox1">FullTime</label>
-                        </div>
-                        <div>
-                            <input type= 'checkbox' id='chekbox2'></input>
-                        <label htmlFor="chekbox2">partTime</label>
-                        </div>
-                        <div>
-                            <input type= 'checkbox' id='chekbox3'></input>
-                        <label htmlFor="chekbox3">FreeLance</label>
-                        </div>
-                        <div>
-                            <input type= 'checkbox' id='chekbox4'></input>
-                        <label htmlFor="checkbox4">Internship</label>
-                        </div>
-                        </div>  
-                    </div>
+                    <EmploymentType onEmploymentTypeChange = {this.onEmploymentTypeChange}/>
                     <hr></hr>
-                    <div>
-                        <p>Salary Range</p>
-                        <div className="checkboxContainer">
-                            <div>
-                            <input type= 'radio' id='radio1' name='salary' value="1"></input>
-                        <label htmlFor="radio1">10Lpa and above</label>
-                        </div>
-                        <div>
-                            <input type= 'radio' id='radio2' name='salary' value="2"></input>
-                        <label htmlFor="radio2" >20Lpa and above</label>
-                        </div>
-                        <div>
-                            <input type= 'radio' id='radio3' name='salary' value="3"></input>
-                        <label htmlFor="radio3" >30Lpa and above</label>
-                        </div>
-                        <div>
-                            <input type= 'radio' id='radio4' name='salary' value="4"></input>
-                        <label htmlFor="radio4" >40Lpa and above</label>
-                        </div>
-                        </div>  
-                    </div>
+                    <MinimumPackage onMinimumPackageChange = {this.onMinimumPackageChange}/> 
                 </div>
-                <div>
-
+                <div className="Rightview">
+                    <InputSearchEl onSearch = {this.onSearch}/>
+                    {   
+                            this.state.jobs!==null && this.state.jobs.map((EachJob, index) => {
+                            return <EachJobItem EachJob = {EachJob} history = {this.props.history}
+                            key = {index}/>;
+                        })   
+                }
                 </div>
             </div>
             </>
