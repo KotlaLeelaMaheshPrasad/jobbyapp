@@ -1,6 +1,6 @@
 
 import './App.css';
-import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import { HashRouter, Route, Routes} from 'react-router-dom';
 import NotFound from './components/NotFound';
 import Home from './components/Home';
 import Job from './components/Job';
@@ -10,7 +10,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route exact path = "/" element = {<ProtectedRoute><Home /> </ProtectedRoute>}/>
         <Route exact path ="/login" element = {<Login />}/>
@@ -18,7 +18,7 @@ function App() {
         <Route exact path = "/jobs/:id" element ={<ProtectedRoute><Job /></ProtectedRoute>}/>
         <Route exact path ="/:sdf" element = {<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
