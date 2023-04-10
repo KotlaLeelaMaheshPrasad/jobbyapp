@@ -1,4 +1,5 @@
 import { Component } from "react";
+import './index.css';
 
 class InputSearchEl extends Component {
     constructor(props) {
@@ -18,9 +19,9 @@ class InputSearchEl extends Component {
 
     render() {
         return (
-            <div>
-                        <input type="text" onChange = {this.enterInput} value = {this.state.searchVal}></input>
-                        <button onClick={this.onSearching}>Search</button>
+            <div className="inputContainer">
+                        <input type="text" onChange = {this.enterInput} value = {this.state.searchVal} className="inputElement"></input>
+                        <button onClick={this.onSearching} className="buttonEl">Search</button>
             </div>
         );
     }

@@ -99,9 +99,9 @@ class Jobs extends Component{
             <div className="JobsPageContainer">
                 <div className="Leftview">
                     <Profile></Profile>
-                    <hr></hr>
+                    <hr className="hrl"></hr>
                     <EmploymentType onEmploymentTypeChange = {this.onEmploymentTypeChange}/>
-                    <hr></hr>
+                    <hr className="hrl"></hr>
                     <MinimumPackage onMinimumPackageChange = {this.onMinimumPackageChange}/> 
                 </div>
                 <div className="Rightview">

@@ -9,7 +9,7 @@ class EachSkill extends Component {
     render() {
         return (
             <div className="skillContainer">
-                <img src = {this.props.eachSkill.image_url}></img>
+                <img src = {this.props.eachSkill.image_url} className='skillLogo'></img>
                 <p>{this.props.eachSkill.name}</p>
             </div>
         )

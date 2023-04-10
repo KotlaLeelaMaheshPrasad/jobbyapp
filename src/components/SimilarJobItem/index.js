@@ -1,29 +1,17 @@
 import { Component } from "react";
-import { Navigate } from "react-router-dom";
+
 import './index.css'
 
 class SimilarJobItem extends Component{
     constructor(props){
         super(props);
-        this.state = {
-            nav : false,
-        }
-    }
-
-    onClicking = () => {
-        this.setState({nav:true});
     }
 
     render() {
-        /*if(this.state.nav===true)
-        {
-            return <Navigate to = {`/Jobs/${this.props.eachSimilarJob.id}`} />
-        }
-        else */{
-            return (
-            <div onClick={this.onClicking}>
+            return (             
+                 <div className="similarJobItemContainer">
                 <div className="SimilarJobItemHeader">
-                    <img src = {this.props.eachSimilarJob.company_logo_url}></img>
+                    <img src = {this.props.eachSimilarJob.company_logo_url} className="companyLogo"></img>
                     <div>
                         <h1> {this.props.eachSimilarJob.title}</h1>
                         <p> {this.props.eachSimilarJob.rating} star</p>
@@ -32,14 +20,14 @@ class SimilarJobItem extends Component{
                 <div>
                     <h1>Description</h1>
                     <p> {this.props.eachSimilarJob.job_description}</p>
-                    <span> {this.props.eachSimilarJob.location}</span>
-                    <span> {this.props.eachSimilarJob.employment_type}</span>
+                    <span className="location"> {this.props.eachSimilarJob.location}</span>
+                    <span className="empltype"> {this.props.eachSimilarJob.employment_type}</span>
                 </div>
-            </div>
+            </div>   
         )
     }
         }
         
-}
+
 
 export default SimilarJobItem;

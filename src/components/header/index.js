@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import { Component } from 'react';
 import Cookies from 'js-cookie';
 import './index.css';
@@ -17,7 +17,9 @@ this.setState({isLoggedin: false});
 }
 
 render(){
-        return (<div className="headerContainer">
+    if(this.state.isLoggedin===false)
+    return <Navigate to = "/login" />
+            return (<div className="headerContainer">
         <div >
             <h1 className='Headerheading'>JOBBY APP</h1>
         </div>

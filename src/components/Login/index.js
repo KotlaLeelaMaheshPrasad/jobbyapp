@@ -72,7 +72,9 @@ class Login extends Component{
             return <Navigate replace to =  '/' />;
         }
         else{
-          return(<div className="LoginPageContainer">
+          return(
+            <div className="LoginPageOuterContainer">
+                <div className="LoginPageContainer">
             <h1 className="heading">JOBBY APP</h1>
             <form onSubmit = {this.onSubmitting} className="">
                 <label htmlFor="Username" className="labelEl">Username</label>
@@ -82,8 +84,10 @@ class Login extends Component{
                 <button className="button">Login</button>
                 {this.state.invalidLogin && <p className="errMsg">*invalid credentials entered</p>}
             </form>
-            </div>)
-        ;
+            </div>
+            </div>
+          
+          );
         } 
     }
 }

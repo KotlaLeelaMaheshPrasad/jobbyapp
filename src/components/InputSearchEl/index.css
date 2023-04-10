@@ -1,0 +1,24 @@
+.buttonEl {
+    font-size: 20px;
+    background-color: #272727;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin: 6px;
+    padding: 8px
+}
+
+.inputElement {
+    font-size: 20px;
+        background-color: #272727;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        margin: 6px;
+        padding: 8px;
+        caret-color: white;
+}
+
+.inputContainer {
+    padding: 8px;
+}

@@ -1,38 +1,58 @@
 .labelEl {
     display: block;
-    font-size: 24px;
-    color: violet;
-    margin: 4px;
+    font-size: 32px;
+    color: blueviolet;
+    margin: 8px;
 }
 
 .heading {
+    font-size: 56px;
     text-align: center;
-    color: violet;
+    color: blueviolet;
 }
 
 .inputEl {
     display: block;
-    font-size: 24px;
-    color: green;
+    font-size: 32px;
+    color: white;
     width: auto;
-    margin: 4px;
+    margin: 8px;
+    background-color: #272727;
+    border-style: ridge;
+    border-radius: 4px;
+    
 }
 
 .button{
     display: block;
     width: auto;
-    font-size: 24px;
+    font-size: 28px;
+    border-style: none;
     color: white;
-    background-color: violet;
-    margin: 4px;
+    background-color: blueviolet;
+    margin: 8px;
+    padding: 4px;
 }
 
 .LoginPageContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #272727;
+    padding: 16px;
+    border-radius: 16px;
+    
 }
 
 .errMsg {
     color: red;
+}
+
+.LoginPageOuterContainer {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }

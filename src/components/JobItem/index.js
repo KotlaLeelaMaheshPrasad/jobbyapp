@@ -45,18 +45,19 @@ class JobItem extends Component {
         return <h1>Job page</h1>;
         else{
             return (
-                <div>
-                    <div className="JobProfileHeader">
-                        <img src = {this.state.job.job_details.company_logo_url} /> 
+                <div className="JobItemContainer">
+                    <div className="JobContainer">
+                        <div className="JobProfileHeader">
+                        <img src = {this.state.job.job_details.company_logo_url} className="companyLogo"/> 
                         <div>
                             <h1>Devops Engineer</h1>
                             <p>{this.state.job.job_details.rating} star</p>
                         </div>
                     </div>
                     <div className="jobDetails">
-                        <div>
-                            <div><span>{this.state.job.job_details.location}</span></div>
-                            <div><span>{this.state.job.job_details.employment_type}</span></div> 
+                        <div className="jobDetcont">
+                            <p className="location">{this.state.job.job_details.location}</p>
+                            <p className="empltype">{this.state.job.job_details.employment_type}</p>
                         </div>
                         <div>
                             <p>{this.state.job.job_details.package_per_annum}</p>
@@ -84,7 +85,9 @@ class JobItem extends Component {
                             <h1>Life at Company</h1>
                             <p>{this.state.job.job_details.life_at_company.description}</p>
                         </div>
-                        <div>
+                    </div>
+                    </div>
+                    <div>
                             <h1>Similar Jobs</h1>
                             <div className="similarJobContainer">
                             {
@@ -95,7 +98,6 @@ class JobItem extends Component {
                             }
                             </div>
                         </div>
-                    </div>
                 </div>
             )
         }

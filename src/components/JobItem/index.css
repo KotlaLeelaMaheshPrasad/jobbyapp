@@ -11,10 +11,50 @@
 
 .similarJobContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .skillsContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.JobItemContainer{
+    color: white;
+    padding: 40px;
+    background-color: black;
+}
+
+.JobContainer {
+    background-color: #202020;
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.companyLogo {
+    size: cover;
+    height: 96px;
+    width: 96px;
+    padding: 16px;
+    padding-left: 0px;
+}
+
+.location {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-right: 12px;
+    margin-left: 12px;
+    display: inline;
+}
+
+.empltype {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-right: 12px;
+    margin-left: 12px;
+    display: inline;
+}
+
+.jobDetcont {
+    padding: 16px;
 }

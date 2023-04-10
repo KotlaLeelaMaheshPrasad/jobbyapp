@@ -4,4 +4,14 @@
     width: 276px;
     background-size: cover;
     border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+}
+
+.userName {
+    color: blueviolet;
+}
+
+.userBio {
+    color: #2c364c;
 }

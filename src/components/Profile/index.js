@@ -45,8 +45,8 @@ class Profile extends Component {
         else{
         return (<div className="ProfileContainer">
                         <img src={this.state.profileData.profile_details.profile_image_url}/>
-            <h1>{this.state.profileData.profile_details.name}</h1>
-            <p>{this.state.profileData.profile_details.short_bio}</p>
+            <h1 className="userName">{this.state.profileData.profile_details.name}</h1>
+            <p className="userBio">{this.state.profileData.profile_details.short_bio}</p>
         </div>);
         }
         

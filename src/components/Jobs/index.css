@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: row;
     align-items: space-around;
+    background-color: black;
+    color:white;
 }
 
 .Leftview{
@@ -10,4 +12,9 @@
 
 .Rightview{
     padding: 16px;
+}
+
+.hrl {
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
