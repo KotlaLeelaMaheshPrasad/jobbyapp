@@ -2,7 +2,7 @@ import { Component } from "react";
 import Cookies from "js-cookie";
 import './index.css'
 
-const url = 'https://apis.ccbp.in/profile';
+const url = 'https://jobby-app-backend.vercel.app/profile';
 
 class Profile extends Component {
     constructor(props){
@@ -14,10 +14,12 @@ class Profile extends Component {
     }
 
     getProfileData = async () => {
-        const jwtToken = Cookies.get('jwt_token');
+        const jwtToken = Cookies.get('auth_token');
         const options = {
             headers: {
                 Authorization: `Bearer ${jwtToken}`,
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
             method: "GET",
         };
@@ -44,9 +46,9 @@ class Profile extends Component {
         }
         else{
         return (<div className="ProfileContainer">
-                        <img src={this.state.profileData.profile_details.profile_image_url}/>
-            <h1 className="userName">{this.state.profileData.profile_details.name}</h1>
-            <p className="userBio">{this.state.profileData.profile_details.short_bio}</p>
+                        <img src={this.state.profileData.profile_image_url} alt="profile_image"/>
+            <h1 className="userName">{this.state.profileData.name}</h1>
+            <p className="userBio">{this.state.profileData.short_bio}</p>
         </div>);
         }
         

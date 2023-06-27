@@ -58,31 +58,31 @@ class Jobs extends Component{
             method: "GET",
         }
         const updatedUrl = this.getUpdatedUrl();
-        console.log(updatedUrl);
+        //console.log(updatedUrl);
         const response = await fetch(updatedUrl, options);
         if(response.ok === true){
             const data = await response.json();
-            console.log(data);
+            //console.log(data);
             this.setState({jobs : data.jobs});
         }
     }
 
     onEmploymentTypeChange = (EmploymentTypeVal) => {
-        console.log(EmploymentTypeVal);
+        //console.log(EmploymentTypeVal);
         this.setState(prevState => {
             return ({...prevState, employment_type: EmploymentTypeVal});
         }, this.getJobs)
     }
 
     onSearch = (searchVal) => {
-        console.log(searchVal);
+        //console.log(searchVal);
         this.setState(prevState => {
             return ({...prevState, search: searchVal});
         }, this.getJobs)
     }
 
     onMinimumPackageChange = (value) => {
-        console.log(value);
+        //console.log(value);
         this.setState(prevState => {
             return ({...prevState, minimum_package: value});
         }, this.getJobs)

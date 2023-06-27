@@ -25,13 +25,13 @@ class JobItem extends Component {
             method: "GET",
         }
         const {id} = this.props.id;
-        console.log(id);
+        //console.log(id);
         const updatedUrl = `${url}/${id}`;
-        console.log(updatedUrl);
+        //console.log(updatedUrl);
         const response = await fetch(updatedUrl, options);
         if(response.ok === true){
             const data = await response.json();
-            console.log(data);
+            //console.log(data);
             this.setState({job : data});
         }
     }

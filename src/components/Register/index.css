@@ -20,10 +20,10 @@
     background-color: #272727;
     border-style: ridge;
     border-radius: 4px;
-    
+
 }
 
-.button{
+.button {
     display: block;
     width: auto;
     font-size: 28px;
@@ -34,21 +34,21 @@
     padding: 4px;
 }
 
-.LoginPageContainer {
+.RegisterPageContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #272727;
     padding: 16px;
     border-radius: 16px;
-    
+
 }
 
 .errMsg {
     color: red;
 }
 
-.LoginPageOuterContainer {
+.RegisterPageOuterContainer {
     background-color: black;
     display: flex;
     flex-direction: column;

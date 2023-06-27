@@ -13,6 +13,7 @@ constructor(props){
 
 Logout = () => {
    Cookies.remove('jwt_token');
+   Cookies.remove('auth_token');
 this.setState({isLoggedin: false});
 }
 
